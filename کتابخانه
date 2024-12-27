@@ -1,0 +1,66 @@
+inusg System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp4
+{
+    public partial class Form1 : Form
+    {
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnbookinfo_Click(object sender, EventArgs e)
+        {
+            book book = new book
+            {
+                title = "pride and prejudice",
+                author = "jane austin",
+                isbn = int.Parse("9781503290563")
+
+            }
+            book.printinfo();
+        }
+
+        private void btnshowmember_Click(object sender, EventArgs e)
+        {
+            member mb = new member
+            {
+                name = "sofi",
+                memeberid = 777,
+                phone = "09123456789"
+            };
+            mb.prinmemberinfo();
+        }
+    }
+}
+public class book
+{
+    public string title;
+    public string author;
+    public int year;
+    public void printinfo()
+    {
+        MessageBox.Show("اطلاعات کتاب \n" + "عنوان کتاب:" + title + "\n" + " نویسنده: " + author + "\n" + "سال انتشار:" + isbn + "\n");
+    }
+}
+public class member
+{
+    public string name;
+    public int memeberid;
+    public string phone;
+    public void prinmemberinfo()
+    {
+        MessageBox.Show("اطلاعات کاربر\n " + "اسم کاربر:" + name + "\n" + "ایدی کاربر:" + memeberid + "\n" + "شماره تماس:" + phone);
+    }
+}
+        
+    
